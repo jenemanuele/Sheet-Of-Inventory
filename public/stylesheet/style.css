@@ -1,15 +1,19 @@
 * {
     box-sizing: border-box;
+    background-color: light rgb(228, 189, 196);
   }
   
-  body, html {
-    height: 100%;
+  body {
+    background-color: light rgb(228, 189, 196);
+    /* height: 100%;
     padding: 0;
     margin: 0;
-    font-family: Helvetica, Arial,  sans-serif;
-    color: light rgb(228, 189, 196)
+    font-family: Helvetica, Arial,  sans-serif;    */
   }
   
+  /* title {
+    font-size: 100px;
+  }
   a {
     text-decoration: none;
     color: black;
@@ -90,4 +94,4 @@
     justify-content: center;
     padding: 1%;
     font-size: 110%;
-  }
+  } */
