@@ -1,4 +1,4 @@
-// const { Acoustic } = require('../models');
+const { Acoustic } = require('../models');
 
 const acousticGuitars = [
     {
@@ -38,5 +38,7 @@ const acousticGuitars = [
         strings: 12
     }
 ];
+
+const seedAcoustic = () => Acoustic.bulkCreate(acousticGuitars);
 
 module.exports = seedAcoustic;

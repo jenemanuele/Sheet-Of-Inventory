@@ -1,4 +1,4 @@
-// const { Electric } = require('../models');
+const { Electric } = require('../models');
 
 const electricGuitars = [
     {
@@ -38,5 +38,6 @@ const electricGuitars = [
         color: 'Fairlane Blue'
     }
 ];
+const seedElectric = () => Electric.bulkCreate(electricGuitars);
 
 module.exports = seedElectric;
