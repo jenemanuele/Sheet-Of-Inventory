@@ -1,4 +1,4 @@
-// const { Bass } = require('../models');
+const { Bass } = require('../models');
 
 const bassGuitars = [
     {
@@ -38,5 +38,7 @@ const bassGuitars = [
         strings: 6
     }
 ];
+
+const seedBass = () => Bass.bulkCreate(bassGuitars);
 
 module.exports = seedBass;
