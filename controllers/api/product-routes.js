@@ -9,6 +9,7 @@ const withAuth = require('../../utils/auth');
 // Routes
 
 // Get all products
+// api/products
 router.get('/', (req, res) => {
   // Access the Product model and run .findAll() method to get all Products
   Product.findAll()
@@ -20,7 +21,9 @@ router.get('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+
 // get singular product
+// api//products/id
 router.get('/:id', (req, res) => {
   Product.findOne({
     where: {

@@ -1,4 +1,4 @@
-const { Product } = require('../models');
+const { Acoustic } = require('../models');
 
 const acousticGuitars = [
     {

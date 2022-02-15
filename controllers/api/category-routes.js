@@ -3,6 +3,7 @@ const { Category, Product } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //get all categories
+// api/category
 router.get('/', withAuth, (req, res) => {
   Category.findAll({
     where: {
@@ -17,6 +18,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 //get one category
+// api/category/id
 router.get('/:id', (req, res) => {
   Category.findOne({
     where: {
