@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS guitars_db;
+
+CREATE DATABASE guitars_db;

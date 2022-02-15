@@ -2,7 +2,15 @@
   "name": "sheet-of-inventory",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "dependencies": {
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^16.0.0",
+    "express-handlebars": "^6.0.2",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.16.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
@@ -16,11 +24,5 @@
   "bugs": {
     "url": "https://github.com/jenemanuele/Sheet-Of-Inventory/issues"
   },
-  "homepage": "https://github.com/jenemanuele/Sheet-Of-Inventory#readme",
-  "dependencies": {
-    "dotenv": "^16.0.0",
-    "express-handlebars": "^6.0.2",
-    "express-session": "^1.17.2",
-    "sequelize": "^6.16.0"
-  }
+  "homepage": "https://github.com/jenemanuele/Sheet-Of-Inventory#readme"
 }
