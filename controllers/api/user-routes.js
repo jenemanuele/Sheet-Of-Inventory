@@ -2,7 +2,9 @@
 // Express.js connection
 const router = require('express').Router();
 // Product model
-const { Product, Category } = require('../../models');
+const { Product} = require('../../models');
+const { User} = require('../../models');
+
 // the authorization middleware to redirect unauthenticated users to the login page
 const withAuth = require('../../utils/auth');
 

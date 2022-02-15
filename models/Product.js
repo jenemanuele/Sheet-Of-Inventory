@@ -40,7 +40,7 @@ Product.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Product'
+        modelName: 'product'
     }
 );
 module.exports = Product;

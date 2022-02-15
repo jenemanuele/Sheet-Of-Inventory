@@ -29,7 +29,7 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Product,
-        attributes: ["product_id", "category_id", "name", "brand", "body_type"],
+        attributes: ["id", "category_id", "product_name", "brand", "body_type"],
       }
     ],
   })
@@ -51,14 +51,14 @@ router.post('/', withAuth, (req, res) => {
   // check the session, and if it exists, create a Product
   if (req.session) {
     Product.create({
-      Product_name: req.body.Product_name,
-      cartegory_id: req.body.category_id,
+      product_name: req.body.Product_name,
+      category_id: req.body.category_id,
       cost: req.body.cost,
       body_type: req.body.body_type,
       brand: req.body.brand,
 
       // use the user id from the session
-      user_id: req.session.user_id
+      // user_id: req.session.user_id
     })
       .then(dbProductData => res.json(dbProductData))
       .catch(err => {
