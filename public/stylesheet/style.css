@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    
   }
   
   body {
@@ -14,6 +13,7 @@
   title {
     font-size: 100px;
   }
+  
   a {
     text-decoration: none;
     color: black;
@@ -40,12 +40,13 @@
     background-color: palevioletred;
   } 
 
+  /* ------PRODUCT PAGE ------*/
   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  
+
   .control {
     display: flex;
     flex-direction: row
@@ -57,6 +58,12 @@
 
   #dropdown:hover {
     color: palevioletred;
+  }
+
+  /* ------DASHBOARD PAGE ------*/
+  .container {
+    padding: 30px 15px;
+    margin: 10px 30px;
   }
 
   textarea:focus, input:focus {
@@ -77,14 +84,14 @@
     display: block;
   }
   
-  .wrapper {
+  /* .wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   header {
     background-color: pink;

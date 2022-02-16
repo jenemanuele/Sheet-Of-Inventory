@@ -1,20 +1,20 @@
-<div class="container">
+{{!-- <div class="container">
   <div class="columns is-mobile">
     <div class="column">
       <div class="card">
         <div class="card-content">
           <div class="content">
             <div class="control">
-              {{!-- <label class="label">View Products</label>
+              <label class="label">View Products</label>
               <label class="label">Select Product</label>
               <div class="select">
                 <select id="select">
-                  <option>All Products</option> --}}
+                  <option>All Products</option>
                   {{#each products}}
                     <option id="{{id}}">{{name}}</option>
                   {{/each}}
-                {{!-- </select>
-              </div> --}}
+                </select>
+              </div>
             </div>
             <br />
           </div>
@@ -22,17 +22,18 @@
       </div>
     </div>
   </div>
-</div>
+</div> --}}
 
 <div class="container">
   <div class="columns is-mobile">
     <div class="column">
+      <h2>Your Products</h2>
       <div class="card">
         <div class="card-content">
           <div id="productDiv" class="content">
             <label class="label">Product Info</label>
             <ul id="productList">
-              {{#each products}}
+              {{#each product}}
                 <li>
                   <label class="label">{{product_name}}</label>
                   <p>Brand: {{brand}}</p>
