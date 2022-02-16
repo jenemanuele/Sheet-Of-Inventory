@@ -2,7 +2,7 @@ const { Category } = require('../models');
 
 const categoryData = [
     {
-      // category_id: 0 autoincrements
+      // category_id: 0
       category_name: 'Acoustic',
     },
     {

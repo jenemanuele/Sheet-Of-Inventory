@@ -39,12 +39,22 @@
   button:hover, .button:hover{
     background-color: palevioletred;
   } 
+
   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
   
+  .control {
+    display: flex;
+    flex-direction: row
+  }
+
+  .option {
+    padding: 0px 5px;
+  }
+
   #dropdown:hover {
     color: palevioletred;
   }

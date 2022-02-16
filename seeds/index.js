@@ -2,6 +2,8 @@ const seedAcoustic = require('./acoustic-seeds');
 const seedBass = require('./bass-seeds');
 const seedElectric = require('./electric-seeds');
 // const seedGuitars = require('./guitar-seeds');
+const seedCategory = require('./electric-seeds');
+
 
 const sequelize = require('../config/connection');
 

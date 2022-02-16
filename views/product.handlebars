@@ -19,7 +19,7 @@
         <div class="card-content">
           <div class="content">
             <form name="orderForm" id="orderForm">
-              <label class="label">Add Product</label>
+              <h2 class="label">Add Product</h2>
               <div class="field">
                 <label class="label">Product Name</label>
                 <div class="control">
@@ -39,13 +39,39 @@
               <div class="field">
                 <label for="brandInput" class="label">Brand</label>
                 <div class="control">
-                  <div id="errorBrand"></div>
-                  <input
-                    class="input"
-                    id="brandInput"
-                    type="text"
-                    placeholder="Enter brand of new product."
-                  />
+                  <div class="option">
+                    <input type="radio" id="0" name="brandInput" value="Martin">
+                    <label for="Martin">Martin</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="1" name="brandInput" value="Taylor">
+                    <label for="Taylor">Taylor</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Guild">
+                    <label for="Guild">Guild</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Fender">
+                    <label for="Fender">Fender</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Gibson">
+                    <label for="Gibson">Gibson</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Gretch">
+                    <label for="Gretch">Gretch</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Epiphone">
+                    <label for="Epiphone">Epiphone</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Squier">
+                    <label for="Squier">Squier</label>
+                  </div>
+                  <br> 
                   <p
                     id="brandError"
                     class="error"
@@ -61,7 +87,7 @@
                     class="input"
                     id="costInput"
                     type="number"
-                    placeholder="Enter the cost of the new product."
+                    placeholder="Enter the cost"
                     step="0.01"
                   />
                   <p
@@ -78,7 +104,7 @@
                     class="input"
                     id="bodytypeInput"
                     type="text"
-                    placeholder="Enter description of body type"
+                    placeholder="Enter description of body"
                   />
                   <p
                     id="bodytypeError"
@@ -108,16 +134,20 @@
                       <option value="2">Electric</option>
                   </select> --}}
 
-                  <p>What category does it fall under:</p>
-                  <input type="radio" id="acoustic" name="categoryInput" value="Acoustic">
-                  <label for="html">Acoustic</label><br>
-                  <input type="radio" id="electric" name="categoryInput" value="Electric">
-                  <label for="css">Electric</label><br>
-                  <input type="radio" id="bass" name="categoryInput" value="Bass">
-                  <label for="javascript">Bass</label>
-                  <br>  
+                  <div class="option">
+                    <input type="radio" id="0" name="categoryInput" value="Acoustic">
+                    <label for="html">Acoustic</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="1" name="categoryInput" value="Electric">
+                    <label for="css">Electric</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="categoryInput" value="Bass">
+                    <label for="javascript">Bass</label>
+                  </div>
 
-                   <p
+                  <p
                     id="categoryError"
                     class="error"
                     style="color: grey; font-weight: bold"
