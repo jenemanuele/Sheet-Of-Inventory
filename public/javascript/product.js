@@ -13,7 +13,7 @@ async function productSubmit(event) {
   // const brand = document.querySelector('input[id="brandInput"]').value;
   // const cost = document.querySelector('input[id="costInput"]').value;
   // const body_type = document.querySelector('input[id="bodytypeInput"').value;
-  // const category_id = document.querySelector('input[id="categoryInput"]').value;
+  // const category_id = document.querySelector('input[name="categoryInput"]').value;
 
   await fetch("/api/product", {
     method: "POST",

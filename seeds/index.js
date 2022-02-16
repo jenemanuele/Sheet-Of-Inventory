@@ -9,14 +9,17 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
   console.log('--------------');
 
-  await seedAcoustic();
-  console.log('--------------');
+  await seedCategory();
+  console.log('-----Seeded Categories-----');
 
-  await seedBass();
-  console.log('--------------');
+  // await seedAcoustic();
+  // console.log('--------------');
 
-  await seedElectric();
-  console.log('--------------');
+  // await seedBass();
+  // console.log('--------------');
+
+  // await seedElectric();
+  // console.log('--------------');
 
   // await seedGuitars();
   // console.log('--------------');

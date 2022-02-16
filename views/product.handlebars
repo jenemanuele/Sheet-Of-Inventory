@@ -103,10 +103,20 @@
                     class="error"
                     style="color: grey; font-weight: bold"
                   ></p> --}}
-                  <select name="categoryInput"> 
+                  {{!-- <select name="categoryInput"> 
                       <option value="1">Acoustic</option>
                       <option value="2">Electric</option>
-                  </select>
+                  </select> --}}
+
+                  <p>What category does it fall under:</p>
+                  <input type="radio" id="acoustic" name="categoryInput" value="Acoustic">
+                  <label for="html">Acoustic</label><br>
+                  <input type="radio" id="electric" name="categoryInput" value="Electric">
+                  <label for="css">Electric</label><br>
+                  <input type="radio" id="bass" name="categoryInput" value="Bass">
+                  <label for="javascript">Bass</label>
+                  <br>  
+
                    <p
                     id="categoryError"
                     class="error"
