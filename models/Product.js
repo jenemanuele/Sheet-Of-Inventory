@@ -19,7 +19,8 @@ Product.init(
         category_id: {
             type: DataTypes.INTEGER,
             refrences: {
-                model: 'Category'
+                model: 'category', 
+                key: 'id'
             }
         },
         cost: {

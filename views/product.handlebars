@@ -1,137 +1,149 @@
 <section class="hero is-dark is-bold">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">
-                Product Management
-            </h1>
-            <h2 class="subtitle">
-                Add new product or view existing products and their inventories.
-            </h2>
-        </div>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Product Management
+      </h1>
+      <h2 class="subtitle">
+        Add new product or view existing products and their inventories.
+      </h2>
     </div>
+  </div>
 </section>
-<br>
-<br>
+<br />
+<br />
 <div class="container">
-    <div class="columns is-mobile">
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <form name="orderForm" id="orderForm">
-                            <label class="label">Add Product</label>
-                            <div class="field">
-                                <label class="label">Product Name</label>
-                                <div class="control">
-                                    <input class="input" id="nameInput" type="text"
-                                        placeholder="Type product name here." />
-                                    <p id="nameError" class="error" style="color: grey; font-weight: bold"></p>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label for="quantityInput" class="label">Brand</label>
-                                <div class="control">
-                                    <div id="errorQuantity"></div>
-                                    <input class="input" id="quantityInput" type="text"
-                                        placeholder="Enter brand of new product." />
-                                    <p id="quantityError" class="error" style="color: grey; font-weight: bold"></p>
-
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label for="costInput" class="label">Cost</label>
-                                <div class="control">
-                                    <input class="input" id="costInput" type="text"
-                                        placeholder="Enter the cost of the new product." />
-                                    <p id="costError" class="error" style="color: grey; font-weight: bold"></p>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label for="descriptionInput" class="label">Description</label>
-                                <div class="control">
-                                    <input class="input" id="descriptionInput" type="text"
-                                        placeholder="Enter description of body type" />
-                                    <p id="descriptionError" class="error" style="color: grey; font-weight: bold">
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label for="categoryInput" class="label">Category</label>
-                                <div class="control">
-                                    <input class="input" type="text" id="categoryInput"
-                                        placeholder="Which category does this product fall under?" />
-                                    <p id="categoryError" class="error" style="color: grey; font-weight: bold"></p>
-                                </div>
-                            </div>
-                            <br>
-                            <button type="submit" class="button is-dark" id="productSubmit">Create
-                                Product</button>
-                        </form>
-                    </div>
+  <div class="columns is-mobile">
+    <div class="column">
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <form name="orderForm" id="orderForm">
+              <label class="label">Add Product</label>
+              <div class="field">
+                <label class="label">Product Name</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="nameInput"
+                    type="text"
+                    placeholder="Type product name here."
+                  />
+                  <p
+                    id="nameError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
                 </div>
-            </div>
+              </div>
+              <div class="field">
+                <label for="quantityInput" class="label">Brand</label>
+                <div class="control">
+                  <div id="errorQuantity"></div>
+                  <input
+                    class="input"
+                    id="quantityInput"
+                    type="text"
+                    placeholder="Enter brand of new product."
+                  />
+                  <p
+                    id="quantityError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
 
+                </div>
+              </div>
+              <div class="field">
+                <label for="costInput" class="label">Cost</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="costInput"
+                    type="number"
+                    placeholder="Enter the cost of the new product."
+                    step="0.01"
+                  />
+                  <p
+                    id="costError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="descriptionInput" class="label">Body Type</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="descriptionInput"
+                    type="text"
+                    placeholder="Enter description of body type"
+                  />
+                  <p
+                    id="descriptionError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  >
+                  </p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bodyTypeInput" class="label">Body Type</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="bodytypeInput"
+                    type="text"
+                    placeholder="Enter description of body type"
+                  />
+                  <p
+                    id="bodytypeError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  >
+                  </p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="categoryInput" class="label">Category</label>
+            
+                <div class="control">
+                  {{!-- <input
+                    class="input"
+                    type="text"
+                    id="categoryInput"
+                    placeholder="Which category does this product fall under?"
+                  />
+                  <p
+                    id="categoryError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p> --}}
+                  <select name="categoryInput"> 
+                      <option value="1">Acoustic</option>
+                      <option value="2">Electric</option>
+                  </select>
+                   <p
+                    id="categoryError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+                </div>
+              </div>
+              <br />
+              <button
+                type="submit"
+                class="button is-dark"
+                id="productSubmit"
+              >Create Product</button>
+            </form>
+          </div>
         </div>
+      </div>
+
     </div>
+  </div>
 </div>
 
-
-<div class="container">
-    <div class="columns is-mobile">
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content">
-                        <div class="control">
-                            <label class="label">View Products</label>
-                            <label class="label">Select Product</label>
-                            <div class="select">
-                                <select id="select">
-                                    <option>All Products</option>
-                                    {{#each products}}
-                                    <option id="{{id}}">{{name}}</option>
-                                    {{/each}}
-                                </select>
-                            </div>
-                        </div>
-                        <br>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="columns is-mobile">
-        <div class="column">
-            <div class="card">
-                <div class="card-content">
-                    <div id="productDiv" class="content">
-                        <label class="label">Product Info</label>
-                        <ul id="productList">
-                            {{#each products}}
-                            <li>
-                                <label class="label">{{product_name}}</label>
-                                <p>brand: {{brand}}</p>
-                                <p>Cost: {{cost}}</p>
-                                <p>Description: {{body_type}}</p>
-                                <p>Category: {{category_id}}</p>
-                            </li>
-                            {{/each}}
-                        </ul>
-
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
-
-
-<script type="text/javascript" src="/assets/js/product.js"></script>
+<script src="/javascript/product.js"></script>

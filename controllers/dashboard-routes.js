@@ -15,7 +15,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
-      res.render('dashboard', { products, loggedIn: true });
+      res.render('dashboard', { products, loggedIn: req.session.loggedIn});
     })
     .catch(err => {
       console.log(err);
@@ -24,9 +24,9 @@ router.get('/', withAuth, (req, res) => {
 });
 
 // //make a new product
-// router.get('/new', withAuth, (req, res)=>{
-//   res.render('new-product', { loggedIn: req.session.loggedIn})
-// });
+router.get('/add', withAuth, (req, res)=>{
+  res.render('product', { loggedIn: req.session.loggedIn})
+});
 
 // //edit a product
 // router.get('/edit/:id', withAuth, (req, res) => {

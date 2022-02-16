@@ -52,23 +52,24 @@ router.get('/:id', (req, res) => {
 // Post a new Product
 router.post('/', withAuth, (req, res) => {
   // check the session, and if it exists, create a Product
-  if (req.session) {
+
     Product.create({
-      product_name: req.body.Product_name,
-      category_id: req.body.category_id,
-      cost: req.body.cost,
-      body_type: req.body.body_type,
-      brand: req.body.brand,
+      // product_name: req.body.Product_name,
+      // category_id: req.body.category_id,
+      // cost: req.body.cost,
+      // body_type: req.body.body_type,
+      // brand: req.body.brand,
+      ...req.body,
 
       // use the user id from the session
-      // user_id: req.session.user_id
+      user_id: req.session.user_id
     })
       .then(dbProductData => res.json(dbProductData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+  
 });
 
 // Delete a Product

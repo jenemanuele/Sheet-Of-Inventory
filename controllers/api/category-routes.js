@@ -45,25 +45,20 @@ router.get('/:id', (req, res) => {
 });
 
 // create a new category
-router.post('/', withAuth, (req, res) => {
+router.post('/',  (req, res) => {
   // check the session, and if it exists, create a Product
-  if (req.session) {
-    Category.create({
-      category_name: req.body.category_name,
-      category_id: req.body.category_id,
-      cost: req.body.cost,
-      body_type: req.body.body_type,
-      brand: req.body.brand,
 
+    Category.create(
+      req.body
       // use the user id from the session
       // user_id: req.session.user_id
-    })
+    )
       .then(dbCategoryData => res.json(dbCategoryData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+  
 });
 
 module.exports = router;

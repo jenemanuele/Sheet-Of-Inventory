@@ -1,101 +1,103 @@
 * {
-    box-sizing: border-box;
-    
-  }
-  
-  body {
-    background-color: light rgb(228, 189, 196);
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    font-family: Helvetica, Arial,  sans-serif;    
-  }
-  
- title {
-    font-size: 100px;
-  }
-  a {
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    transition: color .1s;
-  }
-  
-  a:hover {
-    color: rgb(124, 9, 67);
-  }
-  
-  button {
-    background-color: pink;
-    border: 0;
-    padding: 1%;
-    color: black;
-    font-weight: bold;
-    transition: background-color .1s;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  button:hover {
-    background-color: palevioletred;
-  } 
-  textarea, input {
-    padding: .5%;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  #dropdown:hover {
-    color: palevioletred;
-  }
+box-sizing: border-box;
+}
 
-  textarea:focus, input:focus {
-    outline: none;
-    border: 1px solid rgb(235, 201, 218)
-  }
-  
-  textarea {
-    min-width: 40%;
-    min-height: 100px;
-  }
-  
-  form > div {
-    margin-bottom: 2%;
-  }
-  
-  form label {
-    display: block;
-  }
-  
-  .wrapper {
-    width: 100%;
-    min-height: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  header {
-    background-color: pink;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 1%;
-  }
-  
-  header h1 {
-    font-size: 1em;
-  }
-  
-  main {
-    flex: 1;
-    padding: 2% 4%;
-  }
+body {
+  background-color: light rgb(228, 189, 196);
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica, Arial,  sans-serif;    
+}
 
-  footer {
-    background-color: pink;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 110%;
-  }
+title {
+  font-size: 100px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: color .1s;
+}
+
+a:hover {
+  color: rgb(124, 9, 67);
+}
+  
+button {
+  background-color: pink;
+  border: 0;
+  padding: 1%;
+  color: black;
+  font-weight: bold;
+  transition: background-color .1s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: palevioletred;
+} 
+
+textarea, input {
+  padding: .5%;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#dropdown:hover {
+  color: palevioletred;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+  border: 1px solid rgb(235, 201, 218)
+}
+
+textarea {
+  min-width: 40%;
+  min-height: 100px;
+}
+
+form > div {
+  margin-bottom: 2%;
+}
+
+form label {
+  display: block;
+}
+
+.wrapper {
+  width: 100%;
+  min-height: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1%;
+}
+
+header h1 {
+  font-size: 1em;
+}
+
+main {
+  flex: 1;
+  padding: 2% 4%;
+}
+
+footer {
+  background-color: pink;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 110%;
+}
