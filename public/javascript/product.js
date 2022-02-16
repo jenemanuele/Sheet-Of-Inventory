@@ -2,7 +2,7 @@ async function productSubmit(event) {
   event.preventDefault();
 
   console.log("product test");
-  //add the values for these variables. hardcoded example below to show it works
+  //add the values for these variables. hardcoded example below to show that it works
   const product_name = "gibson les paul";
   const brand = "gibson";
   const cost = 499.99;
