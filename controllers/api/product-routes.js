@@ -9,12 +9,13 @@ const withAuth = require('../../utils/auth');
 // Routes
 
 // Get all products
-// api/products
+// api/products/
 router.get('/', (req, res) => {
   // Access the Product model and run .findAll() method to get all Products
   Product.findAll()
     // return the data as JSON formatted
     .then(dbProductData => res.json(dbProductData))
+    console.log("===got all products====")
     // if there is a server error, return that error
     .catch(err => {
       console.log(err);
@@ -54,11 +55,6 @@ router.post('/', withAuth, (req, res) => {
   // check the session, and if it exists, create a Product
 
     Product.create({
-      // product_name: req.body.Product_name,
-      // category_id: req.body.category_id,
-      // cost: req.body.cost,
-      // body_type: req.body.body_type,
-      // brand: req.body.brand,
       ...req.body,
 
       // use the user id from the session

@@ -3,11 +3,10 @@ const sequelize = require('../config/connection');
 const { User, Category, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
-// get all categories for dashboard
-// /dashboard/
+// get all categories for /dashboard/
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
-  console.log('=======getting all products=======');
+  console.log('======getting all products======');
   Product.findAll({
     where: {
       user_id: req.session.user_id
@@ -16,6 +15,7 @@ router.get('/', withAuth, (req, res) => {
     .then(dbProductData => {
       const products = dbProductData.map(product => product.get({ plain: true }));
       res.render('dashboard', { products, loggedIn: req.session.loggedIn});
+      console.log("=====sent to dashboard.handlbars======")
     })
     .catch(err => {
       console.log(err);
@@ -23,7 +23,7 @@ router.get('/', withAuth, (req, res) => {
     });
 });
 
-// //make a new product
+// make a new product
 router.get('/add', withAuth, (req, res)=>{
   res.render('product', { loggedIn: req.session.loggedIn})
 });
