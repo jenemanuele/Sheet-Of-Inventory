@@ -4,7 +4,7 @@ const { User, Category, Product } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get all categories for dashboard
-// /dashboard
+// /dashboard/
 router.get('/', withAuth, (req, res) => {
   console.log(req.session);
   console.log('=======getting all products=======');
@@ -14,8 +14,8 @@ router.get('/', withAuth, (req, res) => {
     }
   })
     .then(dbProductData => {
-      const posts = dbProductData.map(product => product.get({ plain: true }));
-      res.render('dashboard', { product, loggedIn: true });
+      const products = dbProductData.map(product => product.get({ plain: true }));
+      res.render('dashboard', { products, loggedIn: true });
     })
     .catch(err => {
       console.log(err);
