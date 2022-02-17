@@ -1,0 +1,34 @@
+async function productSubmit(event) {
+  event.preventDefault();
+
+  console.log("=====product was added=====");
+  // //add the values for these variables. hardcoded example below to show that it works
+  // const product_name = "gibson les paul";
+  // const brand = "gibson";
+  // const cost = 499.99;
+  // const body_type = "solid";
+  // const category_id = 1;
+
+  const product_name = document.querySelector('input[id="nameInput"]').value.trim();
+  const brand = document.querySelector('input[name="brandInput"]').value.trim();
+  const cost = document.querySelector('input[id="costInput"]').value.trim();
+  const body_type = document.querySelector('input[id="bodyTypeInput"').value.trim();
+  const category_id = document.querySelector('input[name="categoryInput"]').value.trim();
+
+  await fetch("/api/product", {
+    method: "POST",
+    body: JSON.stringify({
+      product_name,
+      brand,
+      cost,
+      body_type,
+      category_id,
+    }),
+    headers: { "Content-Type": "application/json" },
+  });
+
+  document.location.replace('/dashboard');
+
+}
+
+document.getElementById("orderForm").addEventListener("submit", productSubmit);
