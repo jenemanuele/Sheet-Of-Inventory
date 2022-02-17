@@ -58,7 +58,7 @@ router.post('/', withAuth, (req, res) => {
       ...req.body,
 
       // use the user id from the session
-      user_id: req.session.user_id
+      // user_id: req.session.user_id
     })
       .then(dbProductData => res.json(dbProductData))
       .catch(err => {

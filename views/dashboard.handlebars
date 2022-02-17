@@ -26,14 +26,14 @@
 
 <div class="container">
   <div class="columns is-mobile">
-    {{#if products.length}}
+    {{#if product_name.length}}
     <div class="column">
       <h2>Your Products</h2>
       <div class="card">
         <div class="card-content">
           <div id="productDiv" class="content">
             <ul id="productList">
-              {{#each products}}
+              {{#each product_name}}
                 <li>
                   <label class="label">{{product_name}}</label>
                   <p>Brand: {{brand}}</p>
@@ -52,3 +52,4 @@
 </div>
 
 <a href="/dashboard/add" class="button">Add New Product</a>
+<br>
