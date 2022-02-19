@@ -10,10 +10,23 @@ async function productSubmit(event) {
   // const category_id = 1;
 
   const product_name = document.querySelector('input[id="nameInput"]').value.trim();
-  const brand = document.querySelector('input[name="brandInput"]').value.trim();
-  const cost = document.querySelector('input[id="costInput"]').value.trim();
-  const body_type = document.querySelector('input[id="bodyTypeInput"').value.trim();
-  const category_id = document.querySelector('input[name="categoryInput"]').value.trim();
+  var brand = "Martin";
+  const cost = parseInt(document.querySelector('input[id="costInput"]').value.trim());
+  const body_type = document.querySelector('input[id="bodyTypeInput"]').value.trim();
+  var category_id = 1;
+
+var brandElements = document.getElementsByName('brandInput');
+            for(i = 0; i < brandElements.length; i++) {
+                if(brandElements[i].checked){
+                brand = brandElements[i].value}
+            }
+
+var categoryElements = document.getElementsByName('categoryInput');
+            for(i = 0; i < categoryElements.length; i++) {
+                if(categoryElements[i].checked){
+                category_id = parseInt(categoryElements[i].value)}
+            }
+
 
   await fetch("/api/product", {
     method: "POST",
@@ -27,7 +40,7 @@ async function productSubmit(event) {
     headers: { "Content-Type": "application/json" },
   });
 
-  document.location.replace('/dashboard');
+  // document.location.replace('/dashboard');
 
 }
 

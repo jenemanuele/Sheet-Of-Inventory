@@ -13,7 +13,7 @@ router.get('/', withAuth, (req, res) => {
     }
   })
     .then(dbProductData => {
-      const products = dbProductData.map(product => product.get({ plain: true }));
+      const products = dbProductData.map(product => product.get());
       res.render('dashboard', { products, loggedIn: req.session.loggedIn});
       console.log("=====sent to dashboard.handlbars======")
     })

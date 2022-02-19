@@ -55,7 +55,12 @@ router.post('/', withAuth, (req, res) => {
   // check the session, and if it exists, create a Product
 
     Product.create({
-      ...req.body,
+      // ...req.body,
+      product_name: req.body.product_name,
+      category_id: parseInt(req.body.category_id),
+      cost: parseInt(req.body.cost),
+      body_type: req.body.body_type,
+      brand: req.body.brand
 
       // use the user id from the session
       // user_id: req.session.user_id
