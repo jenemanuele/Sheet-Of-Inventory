@@ -1,44 +1,39 @@
-const { Acoustic } = require('../models');
+const { Product } = require('../models');
 
-const acousticGuitars = [
+const productData = [
     {
-        // guitar_id: 6,
-        brand: 'Martin',
-        name: 'D28 Acoustic',
-        price: 2999,
-        color: 'Sunburst',
-        strings: 6,
+        product_name: 'D28 Acoustic',
+        category_id: 1,
+        cost: 2999,
+        body_type: 'long',
+        brand: 'Martin'
     },
     {
-        brand: 'Martin',
-        name: 'LX1 Little Martin',
-        price: 339,
-        color: 'Natural',
-        strings: 6
+        product_name: 'D263ustic',category_id: 1,
+        cost: 2955,
+        body_type: 'long',
+        brand: 'Martin'
     },
     {
-        brand: 'Taylor',
-        name: 'GS Mini-e Koa Plus',
-        price: 1099,
-        color: 'Shaded Edgeburst',
-        strings: 6
+        product_name: 'D26 Acoustic',category_id: 1,
+        cost: 2449,
+        body_type: 'long',
+        brand: 'Martin'
     },
     {
-        brand: 'Taylor',
-        name: 'Baby Mahogany BT2',
-        price: 399,
-        color: 'Mahogany',
-        strings: 6
+        product_name: 'D27 Acoustic',category_id: 1,
+        cost: 2999,
+        body_type: 'long',
+        brand: 'Martin'
     },
     {
-        brand: 'Guild',
-        name: 'D-1212',
-        price: 779,
-        color: 'Natural',
-        strings: 12
+        product_name: 'D29 Acoustic',category_id: 1,
+        cost: 23359,
+        body_type: 'long',
+        brand: 'Martin'
     }
 ];
 
-const seedAcoustic = () => Acoustic.bulkCreate(acousticGuitars);
+const seedAcoustic = () => Acoustic.bulkCreate(productData);
 
 module.exports = seedAcoustic;

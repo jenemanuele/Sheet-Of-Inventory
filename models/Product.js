@@ -19,7 +19,8 @@ Product.init(
         category_id: {
             type: DataTypes.INTEGER,
             refrences: {
-                model: 'Category'
+                model: 'category', 
+                key: 'id'
             }
         },
         cost: {
@@ -40,7 +41,7 @@ Product.init(
         sequelize,
         freezeTableName: true,
         underscored: true,
-        modelName: 'Product'
+        modelName: 'product'
     }
 );
 module.exports = Product;

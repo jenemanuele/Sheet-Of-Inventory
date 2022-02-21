@@ -10,7 +10,7 @@
               <div class="select">
                 <select id="select">
                   <option>All Products</option>
-                  {{#each products}}
+                  {{#each product}}
                     <option id="{{id}}">{{name}}</option>
                   {{/each}}
                 </select>
@@ -26,23 +26,23 @@
 
 <div class="container">
   <div class="columns is-mobile">
-    {{#if products.length}}
+    {{#if product.length}}
     <div class="column">
       <h2>Your Products</h2>
       <div class="card">
         <div class="card-content">
           <div id="productDiv" class="content">
-            <ul id="productList">
-              {{#each products}}
-                <li>
+            <div id="productList">
+              {{#each product_name}}
+                <ul>
                   <label class="label">{{product_name}}</label>
-                  <p>Brand: {{brand}}</p>
-                  <p>Cost: {{cost}}</p>
-                  <p>Body Type: {{body_type}}</p>
-                  <p>Category: {{category_id}}</p>
-                </li>
+                  <li>Brand: {{brand}}</li>
+                  <li>Cost: {{cost}}</li>
+                  <li>Body Type: {{body_type}}</li>
+                  <li>Category: {{category_id}}</li>
+                </ul>
               {{/each}}
-            </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -52,3 +52,7 @@
 </div>
 
 <a href="/dashboard/add" class="button">Add New Product</a>
+<br>
+<br>
+<a href="/api/product/view" class="button" id="viewProducts">View Product</a>
+<br>

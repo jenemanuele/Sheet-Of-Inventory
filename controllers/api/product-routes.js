@@ -1,35 +1,41 @@
 // Dependencies
 // Express.js connection
 const router = require('express').Router();
+const { dbProductData } = require('express');
 // Product model
-const { Product, Category } = require('../../models');
+const { Product, Category, User } = require('../../models');
 // the authorization middleware to redirect unauthenticated users to the login page
 const withAuth = require('../../utils/auth');
-
 // Routes
 
 // Get all products
-router.get('/', (req, res) => {
-  // Access the Product model and run .findAll() method to get all Products
-  Product.findAll()
-    // return the data as JSON formatted
-    .then(dbProductData => res.json(dbProductData))
-    // if there is a server error, return that error
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-// get singular product
-router.get('/:id', (req, res) => {
-  Product.findOne({
+// api/products
+// get all products
+router.get('/', withAuth, (req, res) => {
+  Product.findAll({
     where: {
-      id: req.params.id,
+      id: req.params.id
+    },
+  })
+  .then(dbProductData => res.json(dbProductData))  
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
+// get singular product
+// api//products/id
+router.get('/:id', (req, res) => {
+  Product.findAll({
+    where: {
+      category_id: req.params.category_id,
+      product_name:req.body.product_name
     },
     include: [
       {
         model: Product,
-        attributes: ["product_id", "category_id", "name", "brand", "body_type"],
+        attributes: [ "product_name", "category_id", "cost", "brand", "body_type"],
       }
     ],
   })
@@ -49,23 +55,24 @@ router.get('/:id', (req, res) => {
 // Post a new Product
 router.post('/', withAuth, (req, res) => {
   // check the session, and if it exists, create a Product
-  if (req.session) {
+
     Product.create({
-      Product_name: req.body.Product_name,
-      cartegory_id: req.body.category_id,
-      cost: req.body.cost,
+      // ...req.body,
+      product_name: req.body.product_name,
+      category_id: parseInt(req.body.category_id),
+      cost: parseInt(req.body.cost),
       body_type: req.body.body_type,
-      brand: req.body.brand,
+      brand: req.body.brand
 
       // use the user id from the session
-      user_id: req.session.user_id
+      // user_id: req.session.user_id
     })
       .then(dbProductData => res.json(dbProductData))
       .catch(err => {
         console.log(err);
         res.status(400).json(err);
       });
-  }
+  
 });
 
 // Delete a Product
@@ -87,5 +94,8 @@ router.delete('/:id', withAuth, (req, res) => {
       res.status(500).json(err);
     });
 });
-
+router.get('/view', withAuth, (req,res) =>{
+  res.render('product/view', { loggedIn: req.session.loggedIn})
+ });
+ 
 module.exports = router;

@@ -1,6 +1,5 @@
 * {
     box-sizing: border-box;
-    
   }
   
   body {
@@ -11,9 +10,10 @@
     font-family: Arial,  sans-serif;    
   }
   
- title {
+  title {
     font-size: 100px;
   }
+  
   a {
     text-decoration: none;
     color: black;
@@ -25,7 +25,7 @@
     color: rgb(124, 9, 67);
   }
   
-  button {
+  button, .button {
     background-color: pink;
     border: 0;
     padding: 1%;
@@ -35,17 +35,35 @@
     cursor: pointer;
     border-radius: 5px;
   }
-  button:hover {
+
+  button:hover, .button:hover{
     background-color: palevioletred;
   } 
+
+  /* ------PRODUCT PAGE ------*/
   textarea, input {
     padding: .5%;
     border-radius: 5px;
     border: 1px solid #ccc;
   }
-  
+
+  .control {
+    display: flex;
+    flex-direction: row
+  }
+
+  .option {
+    padding: 0px 5px;
+  }
+
   #dropdown:hover {
     color: palevioletred;
+  }
+
+  /* ------DASHBOARD PAGE ------*/
+  .container {
+    padding: 30px 15px;
+    margin: 10px 30px;
   }
 
   textarea:focus, input:focus {
@@ -66,14 +84,14 @@
     display: block;
   }
   
-  .wrapper {
+  /* .wrapper {
     width: 100%;
     min-height: 100%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-  }
+  } */
   
   header {
     background-color: pink;
@@ -89,6 +107,9 @@
   
   .card {
     background-color: pink;
+  }
+  .card-content{
+    background-color: thistle;
   }
   main {
     flex: 1;

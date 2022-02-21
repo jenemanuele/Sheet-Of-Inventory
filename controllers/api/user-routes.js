@@ -2,90 +2,70 @@
 // Express.js connection
 const router = require('express').Router();
 // Product model
-const { Product, Category } = require('../../models');
-// the authorization middleware to redirect unauthenticated users to the login page
-const withAuth = require('../../utils/auth');
+const { Product, User } = require('../../models');
 
-// Routes
 
-// Get all products
-router.get('/', (req, res) => {
-  // Access the Product model and run .findAll() method to get all Products
-  Product.findAll()
-    // return the data as JSON formatted
-    .then(dbProductData => res.json(dbProductData))
-    // if there is a server error, return that error
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-// get singular product
-router.get('/:id', (req, res) => {
-  Product.findOne({
-    where: {
-      id: req.params.id,
-    },
-    include: [
-      {
-        model: Product,
-        attributes: ["product_id", "category_id", "name", "brand", "body_type"],
-      }
-    ],
+// POST /api/users
+router.post('/', (req, res) => {
+  User.create({ 
+    username: req.body.username,
+    email: req.body.email,
+    password: req.body.password
   })
-    .then((dbProductData) => {
-      if (!dbProductData) {
-        res.status(404).json({ message: "Product with this id not found" });
-        return;
-      }
-      res.json(dbProductData);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-});
-
-// Post a new Product
-router.post('/', withAuth, (req, res) => {
-  // check the session, and if it exists, create a Product
-  if (req.session) {
-    Product.create({
-      product_name: req.body.product_name,
-      category_id: req.body.category_id,
-      cost: req.body.cost,
-      body_type: req.body.body_type,
-      brand: req.body.brand,
-
-      // use the user id from the session
-      user_id: req.session.user_id
-    })
-      .then(dbProductData => res.json(dbProductData))
-      .catch(err => {
-        console.log(err);
-        res.status(400).json(err);
+    .then(dbUserData => {
+      req.session.save(() => {
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.loggedIn = true;
+  
+        res.json(dbUserData);
       });
-  }
-});
-
-// Delete a Product
-router.delete('/:id', withAuth, (req, res) => {
-  Product.destroy({
-    where: {
-      id: req.params.id
-    }
-  })
-    .then(dbProductData => {
-      if (!dbProductData) {
-        res.status(404).json({ message: 'No Product found with this id' });
-        return;
-      }
-      res.json(dbProductData);
     })
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
     });
+});
+
+// POST /api/users/login
+router.post('/login', (req, res) => {
+  // expects {email: 'lernantino@gmail.com', password: 'password1234'}
+  User.findOne({
+    where: {
+      email: req.body.email
+    }
+  }).then(dbUserData => {
+    if (!dbUserData) {
+      res.status(400).json({ message: 'No user with that email address!' });
+      return;
+    }
+
+    const validPassword = dbUserData.checkPassword(req.body.password);
+
+    if (!validPassword) {
+      res.status(400).json({ message: 'Incorrect password!' });
+      return;
+    }
+
+    req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
+      req.session.loggedIn = true;
+
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
+    });
+  });
+});
+
+router.post('/logout', (req, res) => {
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  }
+  else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

@@ -1,0 +1,231 @@
+<section class="hero is-dark is-bold">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Product Management
+      </h1>
+      <h2 class="subtitle">
+        Add new product or view existing products and the inventories.
+      </h2>
+    </div>
+  </div>
+</section>
+<br />
+<br />
+<div class="container">
+  <div class="columns is-mobile">
+    <div class="column">
+      <div class="card">
+        <div class="card-content">
+          <div class="content">
+            <form name="orderForm" id="orderForm">
+              <h2 class="label">Add Product</h2>
+              <div class="field">
+                <label class="label">Product Name</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="nameInput"
+                    type="text"
+                    placeholder="Type product name here"
+                  />
+                  <p
+                    id="nameError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="brandInput" class="label">Brand</label>
+                <div class="control">
+                  <div class="option">
+                    <input type="radio" id="0" name="brandInput" value="Martin">
+                    <label for="Martin">Martin</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="1" name="brandInput" value="Taylor">
+                    <label for="Taylor">Taylor</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="2" name="brandInput" value="Guild">
+                    <label for="Guild">Guild</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="3" name="brandInput" value="Fender">
+                    <label for="Fender">Fender</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="4" name="brandInput" value="Gibson">
+                    <label for="Gibson">Gibson</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="5" name="brandInput" value="Gretch">
+                    <label for="Gretch">Gretch</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="6" name="brandInput" value="Epiphone">
+                    <label for="Epiphone">Epiphone</label>
+                  </div>
+                  <div class="option">
+                    <input type="radio" id="7" name="brandInput" value="Squier">
+                    <label for="Squier">Squier</label>
+                  </div>
+                  <br> 
+                  <p
+                    id="brandError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+
+                </div>
+              </div>
+              <div class="field">
+                <label for="costInput" class="label">Cost</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="costInput"
+                    type="number"
+                    placeholder="Enter the cost"
+                    step="0.01"
+                  />
+                  <p
+                    id="costError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="bodyTypeInput" class="label">Body Type</label>
+                <div class="control">
+                  <input
+                    class="input"
+                    id="bodyTypeInput"
+                    type="text"
+                    placeholder="Enter description of body"
+                  />
+                  <p
+                    id="bodytypeError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  >
+                  </p>
+                </div>
+              </div>
+              <div class="field">
+                <label for="categoryInput" class="label">Category</label>
+            
+                <div class="control">
+                  {{!-- <input
+                    class="input"
+                    type="text"
+                    id="categoryInput"
+                    placeholder="Which category does this product fall under?"
+                  />
+                  <p
+                    id="categoryError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p> --}}
+                  {{!-- <select name="categoryInput"> 
+                      <option value="1">Acoustic</option>
+                      <option value="2">Electric</option>
+                  </select> --}}
+
+                  <div class="option">
+                    <input type="radio" data-id="0" id="category1" class="category-input" name="categoryInput" value="1">
+                    <label for="html">Acoustic</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" data-id="1" class="category-input" name="categoryInput" value="2">
+                    <label for="css">Electric</label><br>
+                  </div>
+                  <div class="option">
+                    <input type="radio" data-id="2" class="category-input" name="categoryInput" value="3">
+                    <label for="javascript">Bass</label>
+                  </div>
+
+                  <p
+                    id="categoryError"
+                    class="error"
+                    style="color: grey; font-weight: bold"
+                  ></p>
+                </div>
+              </div>
+              <br />
+              <button
+                type="submit"
+                class="button is-dark"
+                id="productSubmit"
+              >Create Product</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{{!-- view products made --}}
+<div class="container">
+    <div class="columns is-mobile">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        <div class="control">
+                          <Div>
+                            
+                          </Div>
+                            <label class="label">View Products</label>
+                            <label class="label">Select Product                         </label>
+                            
+                            <div class="select">
+                                <select id="select">
+                                    <option>All Products</option>
+                                    {{#each product}}
+                                    <option id="{{id}}">{{product}}</option>
+                                    {{/each}}
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="columns is-mobile">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div id="productDiv" class="content">
+                        <label class="label">Product Info</label>
+                        <ul id="productList">
+                            {{#each product}}
+                            <li>
+                                <label class="label">{{product_name}}</label>
+                                <li>category_id: {{category_id}}</li>
+                                <li>Cost: {{cost}}</li>
+                                <li>Description: {{body_type}}</li>
+                                <li>Category: {{category}}</li>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/javascript/viewProducts.js"></script>
+<script src="/javascript/product.js"></script>

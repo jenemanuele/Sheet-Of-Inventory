@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="columns is-mobile">
+        <div class="column">
+            <div class="card">
+                <div class="card-content">
+                    <div id="productDiv" class="content">
+                        <label class="label">Product Info</label>
+                        <ul id="productList">
+                            {{#each product}}
+                            <li>
+                                <label class="label">{{product_name}}</label>
+                                <li>category_id: {{category_id}}</li>
+                                <li>Cost: {{cost}}</li>
+                                <li>Description: {{body_type}}</li>
+                                <li>Category: {{category}}</li>
+                            </li>
+                            {{/each}}
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

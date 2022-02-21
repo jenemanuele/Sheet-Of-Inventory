@@ -13,7 +13,7 @@ router.get('/', withAuth, (req, res) => {
     }
   })
     .then(dbProductData => {
-      const products = dbProductData.map(product => product.get({ plain: true }));
+      const products = dbProductData.map(product => product.get());
       res.render('dashboard', { products, loggedIn: req.session.loggedIn});
       console.log("=====sent to dashboard.handlbars======")
     })
@@ -26,6 +26,12 @@ router.get('/', withAuth, (req, res) => {
 // make a new product
 router.get('/add', withAuth, (req, res)=>{
   res.render('product', { loggedIn: req.session.loggedIn})
+});
+// view product
+
+
+router.get('/view', withAuth, (req,res) =>{
+ res.render('product', { loggedIn: req.session.loggedIn})
 });
 
 // //edit a product
