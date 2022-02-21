@@ -44,4 +44,22 @@ var categoryElements = document.getElementsByName('categoryInput');
 
 }
 
+async function viewProduct (event) {
+  event.preventDefault
+  console.log('View Products here');
+
+  const viewProduct = document.querySelector('.viewProduct')
+  await fetch('/api/product', {
+    method: "GET",
+    body: JSON.stringify({
+      product_name,
+      brand,
+      cost,
+      body_type,
+      category_id,
+  })
+}
+
+
+
 document.getElementById("orderForm").addEventListener("submit", productSubmit);
